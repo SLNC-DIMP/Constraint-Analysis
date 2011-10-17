@@ -27,11 +27,13 @@ Open file "constraint_functions.php"
 	There is no admin interface.  You'll need to manually create one or mor users in the users table.  The password need to be an md5 hash to work correctly.
 
 	If you need to genrate the PHP script to run is as basic as follows.
+	<code>
 	<?php
 		echo md5('my_password_here');
 		
 	OR in MySQL
 	INSERT INTO users ('username', 'password') VALUES('your_username', MD5('your_password'));
+	</code>
 Notes:
 
 This code is very rough and pretty basic.  There aren't many comments.  Hopefully, it's fairly self explanatory.
