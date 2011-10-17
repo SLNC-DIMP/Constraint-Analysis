@@ -8,18 +8,21 @@ Requirements:
 * If PDO is not enabled you'll need to enable it for your database type in your PHP setup.  The SQL file provided is in the MySQL SQL format.
 
 Configuration:
-<code>
 Open file "constraint_functions.php"
 	In function dbConnect()
-		1. Add your username where it says "your_username."
-		2. Add your password where it says "your_password."
-		3. Add your databases's name where it says "your_db_name."
-		4. Change you MySQL path, if it's not localhost.
+	<ol>
+		<li>1. Add your username where it says "your_username."</li>
+		<li>Add your password where it says "your_password."</li>
+		<li>Add your databases's name where it says "your_db_name."</li>
+		<li>Change you MySQL path, if it's not localhost.</li>
+	</ol>
 	
 	In function upload()
-		1. Line 237 - Change dev_path_here to your development environment web server path.
-		2. Line 237 - Change production_path_here to your production environment web server path.
-		3. Line 241 - Change "path_to_upload_folder" to the name of your application.  The rest of the path should stay as it is.
+		<ol>
+		<li>Line 237 - Change dev_path_here to your development environment web server path.</li>
+		<li>Line 237 - Change production_path_here to your production environment web server path.</li>
+		<li>Line 241 - Change "path_to_upload_folder" to the name of your application.  The rest of the path should stay as it is.</li>
+		</ol>
 		
 	There is no admin interface.  You'll need to manually create one or mor users in the users table.  The password need to be an md5 hash to work correctly.
 
@@ -29,7 +32,6 @@ Open file "constraint_functions.php"
 		
 	OR in MySQL
 	INSERT INTO users ('username', 'password') VALUES('your_username', MD5('your_password'));
-</code>
 Notes:
 
 This code is very rough and pretty basic.  There aren't many comments.  Hopefully, it's fairly self explanatory.
