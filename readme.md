@@ -7,7 +7,7 @@ Requirements:
 * Any database for which there is a PDO driver, 
 * If PDO is not enabled you'll need to enable it for your database type in your PHP setup.  The SQL file provided is in the MySQL SQL format.
 
-Configuration:
+Configuration:\r\n
 <code>
 Open constraint_functions.php
 	In function dbConnect()
