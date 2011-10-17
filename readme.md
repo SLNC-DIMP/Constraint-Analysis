@@ -8,7 +8,7 @@ Requirements:
 * If PDO is not enabled you'll need to enable it for your database type in your PHP setup.  The SQL file provided is in the MySQL SQL format.
 
 Configuration:
-
+<code>
 Open constraint_functions.php
 	In function dbConnect()
 		1. Add your username where it says your_username.
@@ -29,7 +29,7 @@ Open constraint_functions.php
 		
 	OR in MySQL
 	INSERT INTO users ('username', 'password') VALUES('your_username', MD5('your_password'));
-
+</code>
 Notes:
 
 This code is very rough and pretty basic.  There aren't many comments.  Hopefully, it's fairly self explanatory.
