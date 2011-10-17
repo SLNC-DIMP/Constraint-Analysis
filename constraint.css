@@ -1,0 +1,153 @@
+* {
+margin:0;
+padding:0;
+list-style-type:none
+}
+
+/* Login page */
+#loginHeader, #loginBox {
+color:#FFF;
+width:500px;
+height:auto;
+padding:20px;
+margin-left:30%
+}
+
+#loginHeader {
+margin-top: 100px;
+border: 3px solid #C00;
+border-top-right-radius:5px;
+border-top-left-radius:5px;
+-moz-border-radius-topright:5px;
+-moz-border-radius-topleft:5px;
+background-color:#C00;
+text-align:center
+}
+
+#loginBox {
+background-color:#366;
+border:3px solid #366;
+border-bottom-right-radius:5px;
+border-bottom-left-radius:5px;
+-moz-border-radius-bottomright:5px;
+-moz-border-radius-bottomleft:5px;
+font-weight:bold
+}
+
+#loginBox form {
+margin-left:60px
+}
+
+input#loginSubmit {
+padding:0 10px 2px
+}
+
+#loginBox + p, .upload_forms_message {
+margin-top: 25px;
+margin-left:36%;
+font-weight:bold;
+color:#F00
+}
+
+/* Page header */
+#header {
+background-color:#C00;
+text-align:center;
+color:#FFF;
+font-family:Arial, Helvetica, sans-serif;
+position: fixed;
+top: 0;
+left: 0;
+z-index:1;
+width:100%
+}
+
+#header ul li, #pages_top li, #pages_bottom li { /* #pages items from constraints.php */
+display:inline
+}
+
+#header a:link, #header a:visited {
+color: #FFF;
+text-decoration:none;
+padding-left: 20px
+}
+
+h1 {
+padding: 10px 0
+}
+
+/* Upload Page */
+h3 {
+margin-top:120px;
+text-align:center;
+color:#F00;
+font-weight:bold
+}
+
+#upload_form {
+padding: 20px;
+border: 1px solid #000;
+width: 550px;
+margin: 25px 0 0 28%
+}
+
+#imageNote {
+color:#F00;
+margin-bottom: 20px
+}
+
+form[name=upload_text_file] {
+margin-bottom: 50px
+}
+
+div#upload_form + p {
+margin-bottom: -20px
+}
+
+/* constraint page */
+table.screenshot {
+padding: 15px 0 15px 25px;
+width:100%
+}
+
+#header + .screenshot {
+margin-top:75px
+}
+
+label {
+font-weight:bold
+}
+
+input + label {
+margin-left: 30px
+}
+
+td {
+padding: 10px; 
+}
+
+.form_row {
+border-bottom:3px solid #CCC
+}
+
+span {
+font-weight: bold;
+color:#F00;
+float: right;
+margin-right: 30%;
+margin-top: -5%
+}
+
+#pages_top, #pages_bottom {
+text-align:center;
+padding: 0 30px 20px 0;
+}
+
+#pages_top {
+margin-top:90px;
+}
+
+#pages_top li, #pages_bottom li {
+padding-right: 10px;
+font-weight:bold
+}
