@@ -18,22 +18,20 @@ Open file "constraint_functions.php"
 	</ol>
 	
 	In function upload()
-		<ol>
-		<li>Line 237 - Change dev_path_here to your development environment web server path.</li>
-		<li>Line 237 - Change production_path_here to your production environment web server path.</li>
-		<li>Line 241 - Change "path_to_upload_folder" to the name of your application.  The rest of the path should stay as it is.</li>
-		</ol>
+		
+		1. Line 237 - Change dev_path_here to your development environment web server path.</li>
+		2. Line 237 - Change production_path_here to your production environment web server path.</li>
+		3. Line 241 - Change "path_to_upload_folder" to the name of your application.  The rest of the path should stay as it is.</li>
+		
 		
 	There is no admin interface.  You'll need to manually create one or mor users in the users table.  The password need to be an md5 hash to work correctly.
 
 	If you need to genrate the PHP script to run is as basic as follows.
-	<code>
 	<?php
 		echo md5('my_password_here');
 		
 	OR in MySQL
 	INSERT INTO users ('username', 'password') VALUES('your_username', MD5('your_password'));
-	</code>
 Notes:
 
 This code is very rough and pretty basic.  There aren't many comments.  Hopefully, it's fairly self explanatory.
