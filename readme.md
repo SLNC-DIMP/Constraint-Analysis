@@ -7,13 +7,13 @@ Requirements:
 * Any database for which there is a PDO driver, 
 * If PDO is not enabled you'll need to enable it for your database type in your PHP setup.  The SQL file provided is in the MySQL SQL format.
 
-Configuration:\r\n
-<code>
-Open constraint_functions.php
+Configuration:
+
+Open file "constraint_functions.php"
 	In function dbConnect()
-		1. Add your username where it says your_username.
-		2. Add your password where it says your_password.
-		3. Add your databases's name where it says your_db_name.
+		1. Add your username where it says "your_username."
+		2. Add your password where it says "your_password."
+		3. Add your databases's name where it says "your_db_name."
 		4. Change you MySQL path, if it's not localhost.
 	
 	In function upload()
@@ -29,7 +29,6 @@ Open constraint_functions.php
 		
 	OR in MySQL
 	INSERT INTO users ('username', 'password') VALUES('your_username', MD5('your_password'));
-</code>
 Notes:
 
 This code is very rough and pretty basic.  There aren't many comments.  Hopefully, it's fairly self explanatory.
