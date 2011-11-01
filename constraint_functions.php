@@ -295,7 +295,7 @@ function clearScreenshots() {
 	$dir = 'screenshots';
 	$screenshots = scandir($dir);
 	
-	foreach($sreenshots as $screenshot):
+	foreach($screenshots as $screenshot):
 		if(is_dir($screenshot)):
 			unset($screenshot);
 		endif;
