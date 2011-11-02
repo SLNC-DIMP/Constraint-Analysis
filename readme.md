@@ -33,8 +33,10 @@ Open file "constraint_functions.php"
 	OR in MySQL
 	INSERT INTO users ('username', 'password') VALUES('your_username', MD5('your_password'));
 Notes:
-Urls in your lists should have formatting similar to this: digital.ncdcr.gov.  Leave off the http(s):// 
 This code is very rough and pretty basic.  There aren't many comments.  Hopefully, it's fairly self explanatory.
+
+Urls in your lists should have formatting similar to this: digital.ncdcr.gov.  Leave off the "http(s)://"
+ 
 
 Basic Functionality:
 
