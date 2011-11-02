@@ -312,6 +312,7 @@ function processUpload($db, $moved_file_path) {
 	$query = "INSERT INTO links(url) VALUES(?)";
 	
 	foreach($ready_for_db as $url):
+		$url = str_replace('/', '', $url); // replace / so file naming doesn't blow up.
 		$url = clean($url);
 		filter_var($url, FILTER_SANITIZE_URL);
 		$load_url = $db->prepare($query);
