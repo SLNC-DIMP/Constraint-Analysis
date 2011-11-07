@@ -23,7 +23,9 @@ Open file "constraint_functions.php"
 		2. Line 237 - Change production_path_here to your production environment web server path.</li>
 		3. Line 241 - Change "path_to_upload_folder" to the name of your application.  The rest of the path should stay as it is.</li>
 		
-		
+	
+	If there is no "screenhots" directory you'll need to create it at the root of your main "constraint_analysis" directory.
+	
 	There is no admin interface.  You'll need to manually create one or mor users in the users table.  The password need to be an md5 hash to work correctly.
 
 	If you need to genrate the PHP script to run is as basic as follows.
