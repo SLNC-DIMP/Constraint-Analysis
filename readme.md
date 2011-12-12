@@ -1,5 +1,7 @@
 ﻿AI Constraint Analysis tool
 
+NOTE (12-12-2011):  The 3rd party service used for this application now limits screenshots to three concurrent image requests from the same IP address.  This makes the Constraint Analysis tool very awkward to use.  I'm working on a version that uses wkhtmltopdf instead.
+
 Requirements: 
 
 * PHP 5.1+, 
