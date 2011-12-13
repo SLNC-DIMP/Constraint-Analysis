@@ -5,7 +5,9 @@ NOTE (12-12-2011):  The 3rd party service used for this application now limits s
 Requirements: 
 
 * PHP 5.1+, 
+* Command Line PHP access
 * JavaScript enabled browser,
+* whkthmltopdf (download version for your OS at http://http://code.google.com/p/wkhtmltopdf and follow installation directions for your OS at http://madalgo.au.dk/~jakobt/wkhtmltoxdoc/wkhtmltopdf-0.9.9-doc.html.  See http://madalgo.au.dk/~jakobt/wkhtmltoxdoc/wkhtmltoimage_0.10.0_rc2-doc.html for command line options for wkhtmltoimage.)
 * Any database for which there is a PDO driver, 
 * If PDO is not enabled you'll need to enable it for your database type in your PHP setup.  The SQL file provided is in the MySQL SQL format.
 
