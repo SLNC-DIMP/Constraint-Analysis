@@ -28,9 +28,12 @@ Open file "constraint_functions.php"
 		3. Line 241 - Change "path_to_upload_folder" to the name of your application.  The rest of the path should stay as it is.</li>
 		
 	
-	If there is no "screenhots" directory you'll need to create it at the root of your main "constraint_analysis" directory.
+	If there is no "screenshots" directory you'll need to create it at the root of your main "constraint_analysis" directory.
+    
+Open file "cli_image.php"
+	Change the specified example path, C:\"Program Files"\wkhtmltopdf\wkhtmltoimage.exe, to whatever your path is to wkhtmltopdf.  You can also change the argument settings or add others.  See http://madalgo.au.dk/~jakobt/wkhtmltoxdoc/wkhtmltoimage_0.10.0_rc2-doc.html for the available options.
 	
-	There is no admin interface.  You'll need to manually create one or mor users in the users table.  The password need to be an md5 hash to work correctly.
+	There is no admin interface.  You'll need to manually create one or more users in the users table.  The password need to be an md5 hash to work correctly.
 
 	If you need to genrate the PHP script to run is as basic as follows.
 	<?php
@@ -48,7 +51,13 @@ Basic Functionality:
 
 After logging in a user is taken to the URL listings page.  If they're aren't any or they'd like to start a new analysis they can click 'Upload Constraint List.'  You can then upload your .txt or .csv file which contains one URL per line.  The upload can take awhile and it's better to use smaller files as the upload can time out depending on your server settings.  NOTE: Anytime you upload a new list of urls it overwrites and deletes all previous lists.
 
-Each URL is then sent to a free 3rd party screenshot site and the image retrieved.  This can also take awhile as the URLs are queued for processing on the remote server.
+Open a command prompt and run cli_image.php.
+	Example (Windows):
+	 Go to start->run->type cmd and hit enter
+	 Navigate to your ai_constraint folder and run c:\"path to php"\php.exe cli_image.php.
+
+This will create your screenshots.  It will undoubtedly take awhile.
+wkthmltopdf on Windows is prone to the occasional crash.  Just close the error message and it should continue.  If the script freezes on a url you can stop it by hitting Ctrl-C or whatever the escape sequence is on your OS.  If you start the script again it should pick up where it left off.
 
 Once your URL list has been processed and the screenshots returned the user can click 'URL Listings' to process the listings as they see fit.  100 images are displayed per page.  Each field is saved as it moved through or by hittng the Save button.
 
