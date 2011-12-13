@@ -309,64 +309,16 @@ function clearScreenshots() {
 
 function processUpload($db, $moved_file_path) {
 	$ready_for_db = file($moved_file_path, FILE_SKIP_EMPTY_LINES);
-	$query = "INSERT INTO links(url) VALUES(?)";
 	
 	foreach($ready_for_db as $url):
 		$url = str_replace('/', '', $url); // replace / so file naming doesn't blow up.
 		$url = clean($url);
 		filter_var($url, FILTER_SANITIZE_URL);
+		$query = "INSERT INTO links(url) VALUES(?)";
 		$load_url = $db->prepare($query);
 		$write_url = $load_url->execute(array($url));
-		if($write_url != false):
-			$url_id = $db->lastInsertId();
-			$screenshot_path = getScreenshot($url);
-			writeScreenshotDB($db, $screenshot_path, $url_id);
-		else:
-			echo '<p class="upload_forms_message">' . $url . ' could not be written to the database</p>';
+		if($write_url == false):
+			echo "<p class='upload_forms_message'>" . $url . ' could not be written to the database</p>';
 		endif;
 	endforeach;
-	
-	echo '<p class="upload_forms_message">Uploaded file urls written to the database, any errors should be displayed above</p>';
-}
-
-// gets screenshot.  can set retry to true if getting previously queued image
-function getScreenshot($url, $retry = false) {
-	$file_path = "screenshots/" . $url . ".png";
-
-	if($retry == false || (file_exists($file_path))):
-		$ch = curl_init("http://wimg.ca/size_3/http://" . $url);
-		$fp = fopen($file_path, "wb");
-		
-		curl_setopt($ch, CURLOPT_FILE, $fp);
-		curl_setopt($ch, CURLOPT_HEADER, 0);
-		
-		curl_exec($ch);
-		curl_close($ch);
-		fclose($fp);
-	endif;
-	
-	if(file_exists($file_path)):
-		return $file_path;
-	else:
-		echo "<p class='upload_forms_message'>File path not found for: " . $url . "</p>";
-		return '';
-	endif;
-}
-
-// query to get all links to get final image if they've been queued up and return gibberish
-function retryScreenshotQuery($db) {
-	$query = "SELECT url FROM links";
-	$run = $db->query($query);
-	
-	return $run;	
-}
-
-function writeScreenshotDB($db, $screenshot_path, $url_id) {
-	$query = "UPDATE links SET screenshot_path = ? WHERE id = ?";
-	$prepare = $db->prepare($query);
-	$run = $prepare->execute(array($screenshot_path, $url_id));
-	
-	if($run == false):
-		echo "<p class='upload_forms_message'>Screenshot path for " . $screenshot_path . " couldn't be written to the database</p>";
-	endif;
 }

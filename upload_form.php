@@ -11,14 +11,6 @@
             <input type="hidden" name="MAX_FILE_SIZE" value="30000" /><br /><br />
             <input type="submit" name="submit_urls" value="Upload Text File" />
         </form>
-        
-        <h5 id="imageNote">
-        	Note: Screenshots may take several hours to generate.  Please wait after uploading a file and then run this action
-            if images on the constraint page appear wonky
-        </h5>
-        <form name="full_image" action="<?php $_SERVER['PHP_SELF']; ?>" method="post" id="full_image">
-        	<input type="submit" name="check_images" value="Generate Full Images" />
-        </form>
     </div>
     <?php include 'upload_file_process.php'; ?>
 </body>
