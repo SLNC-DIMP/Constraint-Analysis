@@ -118,7 +118,11 @@ function getPageRanges($id_list) {
 
 function selectLinks($db, $page = 1) {
 	$id_list = getIds($db);
+	if(empty($id_list)) { return false; }
+	
 	$range = getPageRanges($id_list);
+	if(empty($range)) { return false; }
+	
 	$page_key = $page - 1; // pages always one behind the array key
 	$range_start = $range[$page_key][0];
 	$range_end = end($range[$page_key]);
