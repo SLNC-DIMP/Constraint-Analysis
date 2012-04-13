@@ -61,6 +61,8 @@ This work is published from the:
   United States</span>.
 </p>
 
+<hr />
+
 This code is very rough and pretty basic.  There aren't many comments.  Hopefully, it's fairly self explanatory.
 
 Urls in your lists should have formatting similar to this: digital.ncdcr.gov.  Leave off the "http(s)://"
