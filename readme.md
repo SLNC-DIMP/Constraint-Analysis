@@ -53,14 +53,14 @@ Notes:
   <br />
   To the extent possible under law,
   <span rel="dct:publisher" resource="[_:publisher]">the person who associated CC0</span>
-  with CINCH has waived all copyright and related or neighboring rights to
-  <span property="dct:title">CINCH</span>.
+  with Constraint-Analysis has waived all copyright and related or neighboring rights to
+  <span property="dct:title">Constraint-Analysis</span>.
 This work is published from the:
 <span property="vcard:Country" datatype="dct:ISO3166"
       content="US" about="[_:publisher]">
   United States</span>.
 </p>
-
+<p>3rd party tools used, such as wkhtmltopdf remain under their original licenses.</p>
 <hr />
 
 This code is very rough and pretty basic.  There aren't many comments.  Hopefully, it's fairly self explanatory.
