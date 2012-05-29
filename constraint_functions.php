@@ -108,6 +108,7 @@ function getIds($db) {
 }
 
 function getPageRanges($id_list) {
+	$list = array();
 	while($row = $id_list->fetch(PDO::FETCH_ASSOC)):
 		$list[] = $row['id'];
 	endwhile;
@@ -133,6 +134,8 @@ function selectLinks($db, $page = 1) {
 	AND $range_end
 	ORDER BY id ASC";
 	$run = $db->query($query);
+	
+	if(empty($run)) { return false; }
 	
 	return $run;
 }
