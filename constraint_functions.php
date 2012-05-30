@@ -245,7 +245,7 @@ function upload() {
 	if(is_uploaded_file($_FILES['upload']['tmp_name']) 
 	&& ($file_type == 'text/plain' || $file_type == 'text/comma-separated-values')): 
 		$moved_file_path = 'uploads/constraint_urls.txt';
-		$file = move_uploaded_file($_FILES['upload']['tmp_name'], $moved_file_path);
+		$file = @move_uploaded_file($_FILES['upload']['tmp_name'], $moved_file_path);
 			
 		if($file == true):
 			echo $message_start. 'File successfully uploaded. ';
