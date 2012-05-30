@@ -19,4 +19,4 @@ $db_config['db_name']  = '';
 * You can also change the argument settings or add others.  
 * See http://madalgo.au.dk/~jakobt/wkhtmltoxdoc/wkhtmltoimage_0.10.0_rc2-doc.html for the available options.
 */
-$path_config['wkhtmltopdf'] = 'C:\"Program Files"\wkhtmltopdf\wkhtmltoimage.exe';
+$path_config['wkhtmltoimage'] = 'C:\"Program Files"\wkhtmltopdf\wkhtmltoimage.exe';
