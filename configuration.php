@@ -15,6 +15,8 @@ $db_config['db_name']  = '';
 /**
 * Configure file paths
 *
-* $path_config['wkhtmltopdf'] - Path to wkhtmltopdf binary.  Be sure to leave the double-quotes around "Program Files" if file is located there. :) 
+* $path_config['wkhtmltopdf'] - Path to wkhtmltopdf binary.  Be sure to leave the double-quotes around "Program Files" if file is located there on Windows. :) 
+* You can also change the argument settings or add others.  
+* See http://madalgo.au.dk/~jakobt/wkhtmltoxdoc/wkhtmltoimage_0.10.0_rc2-doc.html for the available options.
 */
 $path_config['wkhtmltopdf'] = 'C:\"Program Files"\wkhtmltopdf\wkhtmltoimage.exe';

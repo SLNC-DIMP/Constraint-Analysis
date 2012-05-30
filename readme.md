@@ -14,26 +14,10 @@ Requirements:
 * If PDO is not enabled you'll need to enable it for your database type in your PHP setup.  The SQL file provided is in the MySQL SQL format.
 
 Configuration:
-Open file "constraint_functions.php"
-	In function dbConnect()
-	<ol>
-		<li>1. Add your username where it says "your_username."</li>
-		<li>Add your password where it says "your_password."</li>
-		<li>Add your databases's name where it says "your_db_name."</li>
-		<li>Change you MySQL path, if it's not localhost.</li>
-	</ol>
-	
-	In function upload()
-		
-		1. Line 237 - Change dev_path_here to your development environment web server path.</li>
-		2. Line 237 - Change production_path_here to your production environment web server path.</li>
-		3. Line 241 - Change "path_to_upload_folder" to the name of your application.  The rest of the path should stay as it is.</li>
-		
-	
-	If there is no "screenshots" directory you'll need to create it at the root of your main "constraint_analysis" directory.
-    
-Open file "cli_image.php"
-	Change the specified example path, C:\"Program Files"\wkhtmltopdf\wkhtmltoimage.exe, to whatever your path is to wkhtmltopdf.  You can also change the argument settings or add others.  See http://madalgo.au.dk/~jakobt/wkhtmltoxdoc/wkhtmltoimage_0.10.0_rc2-doc.html for the available options.
+Create a MySQL database and import the constraints.sql file.
+
+Open file "configuration.php"
+	Fill in the fields as outlined.  The configuration username/password are to connect to the database not the username and password you create for the user table.
 	
 	There is no admin interface.  You'll need to manually create one or more users in the users table.  The password need to be an md5 hash to work correctly.
 
