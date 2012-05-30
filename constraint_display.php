@@ -1,7 +1,7 @@
 <?php
 include "constraint_functions.php";
 if(!isset($_GET['download'])) { intruder(); }
-$db = dbConnect();
+$db = dbConnect($db_config);
 
 
 	if(isset($_GET['page'])):

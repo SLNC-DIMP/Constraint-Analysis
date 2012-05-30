@@ -1,9 +1,12 @@
 <?php
-function dbConnect() {
+include 'configuration.php';
+
+function dbConnect($db_config) {
 	try {
-		$user = 'your_username';
-		$pass = 'your_password';
-		$dsn ='mysql:host=localhost;dbname=your_db_name';
+		print_r($db_config);
+		$user = $db_config['username'];
+		$pass = $db_config['password'];
+		$dsn ="mysql:host={$db_config['host']};dbname={$db_config['db_name']}";
 		$db = new PDO($dsn, $user, $pass);
 	} catch(PDOException $e) {
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
@@ -47,7 +50,6 @@ function login($db) {
 	$num_users = "SELECT COUNT(*) FROM users WHERE username = ? AND password = ?";
 	$login = $db->prepare($num_users);
 	$login->execute($user_info);
-		
 	if($login->fetchColumn() == 1):
 		session_start();
 			
@@ -240,13 +242,10 @@ function upload() {
 	$file_type = $_FILES['upload']['type'];
 	$message_start = '<p class="upload_forms_message">';
 	
-	// development or production environment
-	$web_folder = ($_SERVER['SERVER_NAME'] == 'localhost') ? 'dev_path_here' : 'production_path here';
-		
 	if(is_uploaded_file($_FILES['upload']['tmp_name']) 
 	&& ($file_type == 'text/plain' || $file_type == 'text/comma-separated-values')): 
-		$moved_file_path = $web_folder . '/path_to_upload_folder/uploads/constraint_urls.txt';
-		$file = move_uploaded_file(strip_tags(trim($_FILES['upload']['tmp_name'])), $moved_file_path);
+		$moved_file_path = 'uploads/constraint_urls.txt';
+		$file = move_uploaded_file($_FILES['upload']['tmp_name'], $moved_file_path);
 			
 		if($file == true):
 			echo $message_start. 'File successfully uploaded. ';
@@ -302,30 +301,34 @@ function clearScreenshots() {
 	$dir = 'screenshots';
 	$screenshots = scandir($dir);
 	
-	foreach($screenshots as $screenshot):
-		if(is_dir($screenshot)):
-			unset($screenshot);
-		endif;
-		@$delete = unlink($dir . '/' . $screenshot); // suppress warning message on failure
-		
-		if($delete == false):
-			echo '<p class="upload_forms_message">' . $screenshot . ' could not be deleted from the file system</p>';
-		endif;
-	endforeach;
+	if(count($screenshots) > 2) {
+		foreach($screenshots as $screenshot):
+			if(is_dir($screenshot)):
+				unset($screenshot);
+			endif;
+			$delete = @unlink($dir . '/' . $screenshot); // suppress warning message on failure
+			
+			if($delete == false):
+				echo '<p class="upload_forms_message">' . $screenshot . ' could not be deleted from the file system</p>';
+			endif;
+		endforeach;
+	}
 }
 
 function processUpload($db, $moved_file_path) {
-	$ready_for_db = file($moved_file_path, FILE_SKIP_EMPTY_LINES);
+	$ready_for_db = @file($moved_file_path, FILE_SKIP_EMPTY_LINES);
 	
-	foreach($ready_for_db as $url):
-		$url = str_replace('/', '', $url); // replace / so file naming doesn't blow up.
-		$url = clean($url);
-		filter_var($url, FILTER_SANITIZE_URL);
-		$query = "INSERT INTO links(url) VALUES(?)";
-		$load_url = $db->prepare($query);
-		$write_url = $load_url->execute(array($url));
-		if($write_url == false):
-			echo "<p class='upload_forms_message'>" . $url . ' could not be written to the database</p>';
-		endif;
-	endforeach;
+	if($ready_for_db) {
+		foreach($ready_for_db as $url):
+			$url = str_replace('/', '', $url); // replace / so file naming doesn't blow up.
+			$url = clean($url);
+			filter_var($url, FILTER_SANITIZE_URL);
+			$query = "INSERT INTO links(url) VALUES(?)";
+			$load_url = $db->prepare($query);
+			$write_url = $load_url->execute(array($url));
+			if($write_url == false):
+				echo "<p class='upload_forms_message'>" . $url . ' could not be written to the database</p>';
+			endif;
+		endforeach;
+	}
 }
