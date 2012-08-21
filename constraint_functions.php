@@ -3,10 +3,12 @@ include 'configuration.php';
 
 function dbConnect($db_config) {
 	try {
-		print_r($db_config);
 		$user = $db_config['username'];
 		$pass = $db_config['password'];
-		$dsn ="mysql:host={$db_config['host']};dbname={$db_config['db_name']}";
+		$host = $db_config['host'];
+		$db_name = $db_config['db_name'];
+		
+		$dsn ="mysql:host=$host;dbname=$db_name";
 		$db = new PDO($dsn, $user, $pass);
 	} catch(PDOException $e) {
 		$db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
