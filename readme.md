@@ -29,22 +29,6 @@ Open file "configuration.php"
 	INSERT INTO users ('username', 'password') VALUES('your_username', MD5('your_password'));
 Notes:
 
-<p xmlns:dct="http://purl.org/dc/terms/" xmlns:vcard="http://www.w3.org/2001/vcard-rdf/3.0#">
-  <a rel="license"
-     href="http://creativecommons.org/publicdomain/zero/1.0/">
-    <img src="http://i.creativecommons.org/p/zero/1.0/80x15.png" style="border-style: none;" alt="CC0" />
-  </a>
-  <br />
-  To the extent possible under law,
-  <span rel="dct:publisher" resource="[_:publisher]">the person who associated CC0</span>
-  with Constraint-Analysis has waived all copyright and related or neighboring rights to
-  <span property="dct:title">Constraint-Analysis</span>.
-This work is published from the:
-<span property="vcard:Country" datatype="dct:ISO3166"
-      content="US" about="[_:publisher]">
-  United States</span>.
-</p>
-<p>3rd party tools used, such as wkhtmltopdf remain under their original licenses.</p>
 <hr />
 
 This code is very rough and pretty basic.  There aren't many comments.  Hopefully, it's fairly self explanatory.
@@ -67,5 +51,34 @@ wkthmltopdf on Windows is prone to the occasional crash.  Just close the error m
 Once your URL list has been processed and the screenshots returned the user can click 'URL Listings' to process the listings as they see fit.  100 images are displayed per page.  Each field is saved as it moved through or by hittng the Save button.
 
 Once your satisfied with your results you can click 'Download Contraint List' to downloat a .txt file of your uploaded file list and the changes you made.  The following fields are included for each URL:  url, constrain, seed).
+
+<hr />
+
+This is free and unencumbered software released into the public domain.
+
+Anyone is free to copy, modify, publish, use, compile, sell, or
+distribute this software, either in source code form or as a compiled
+binary, for any purpose, commercial or non-commercial, and by any
+means.
+
+In jurisdictions that recognize copyright laws, the author or authors
+of this software dedicate any and all copyright interest in the
+software to the public domain. We make this dedication for the benefit
+of the public at large and to the detriment of our heirs and
+successors. We intend this dedication to be an overt act of
+relinquishment in perpetuity of all present and future rights to this
+software under copyright law.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS BE LIABLE FOR ANY CLAIM, DAMAGES OR
+OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
+ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
+OTHER DEALINGS IN THE SOFTWARE.
+
+For more information, please refer to <http://unlicense.org/>
+
+<p>3rd party tools used, such as wkhtmltopdf remain under their original licenses.</p>
 
  

@@ -1,7 +1,7 @@
 <?php
 include 'constraint_functions.php';
 
-$db = dbConnect();
+$db = dbConnect($db_config);
 	
 $query = "SELECT id, url FROM links WHERE screenshot_path IS NULL";
 $urls = $db->query($query);
