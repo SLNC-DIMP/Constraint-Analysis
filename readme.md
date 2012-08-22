@@ -54,6 +54,8 @@ Once your satisfied with your results you can click 'Download Contraint List' to
 
 <hr />
 
+Released under the UnLicense:
+
 This is free and unencumbered software released into the public domain.
 
 Anyone is free to copy, modify, publish, use, compile, sell, or
